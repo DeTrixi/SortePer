@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "SortePer/1.0.0": {
+        "dependencies": {
+          "SortePerLibrary": "1.0.0"
+        },
+        "runtime": {
+          "SortePer.dll": {}
+        }
+      },
+      "SortePerLibrary/1.0.0": {
+        "runtime": {
+          "SortePerLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SortePer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SortePerLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

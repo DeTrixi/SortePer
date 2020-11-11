@@ -1,0 +1,16 @@
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePer.exe
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePer.deps.json
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePer.runtimeconfig.json
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePer.runtimeconfig.dev.json
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePer.dll
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePer.pdb
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePerLibrary.dll
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\bin\Debug\netcoreapp3.1\SortePerLibrary.pdb
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.csprojAssemblyReference.cache
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.AssemblyInfoInputs.cache
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.AssemblyInfo.cs
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.csproj.CoreCompileInputs.cache
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.csproj.CopyComplete
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.dll
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.pdb
+C:\Users\flemm\RiderProjects\SortePerUI\SortePer\obj\Debug\netcoreapp3.1\SortePer.genruntimeconfig.cache

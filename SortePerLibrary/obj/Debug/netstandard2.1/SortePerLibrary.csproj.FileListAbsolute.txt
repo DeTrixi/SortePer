@@ -1,0 +1,9 @@
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\bin\Debug\netstandard2.1\SortePerLibrary.deps.json
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\bin\Debug\netstandard2.1\SortePerLibrary.dll
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\bin\Debug\netstandard2.1\SortePerLibrary.pdb
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\obj\Debug\netstandard2.1\SortePerLibrary.csprojAssemblyReference.cache
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\obj\Debug\netstandard2.1\SortePerLibrary.AssemblyInfoInputs.cache
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\obj\Debug\netstandard2.1\SortePerLibrary.AssemblyInfo.cs
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\obj\Debug\netstandard2.1\SortePerLibrary.csproj.CoreCompileInputs.cache
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\obj\Debug\netstandard2.1\SortePerLibrary.dll
+C:\Users\flemm\RiderProjects\SortePerUI\SortePerLibrary\obj\Debug\netstandard2.1\SortePerLibrary.pdb
