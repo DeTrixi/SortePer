@@ -6,6 +6,8 @@ namespace SortePerLibrary.Services
 {
     public class Validate : IValidate
     {
+        public event EventHandler<string> LoserHasBeenFound;
+
         /// <summary>
         /// This method validates on amount of players is between 3 and 7
         /// </summary>
@@ -22,7 +24,6 @@ namespace SortePerLibrary.Services
         }
 
 
-
         /// <summary>
         /// This method checks for duplicates
         /// </summary>
@@ -30,13 +31,10 @@ namespace SortePerLibrary.Services
         /// <returns>Returns true if duplicates exists</returns>
         public bool AreTherePairsInHand(List<IPlayerModel> players)
         {
-            CardValue TempValue;
-            bool returnValue = false;
             foreach (var player in players)
             {
                 for (int i = 0; i < player.Cards.Count; i++)
                 {
-                    TempValue = player.Cards[i].CardValue;
                     for (int j = i + 1; j < player.Cards.Count; j++)
                     {
                         if (player.Cards[i].CardValue == player.Cards[j].CardValue)
@@ -47,14 +45,18 @@ namespace SortePerLibrary.Services
                 }
             }
 
-            return returnValue;
+            return false;
         }
 
         public bool ValidateIsLoser(List<IPlayerModel> players)
         {
-            // TODO if list lenght is 1
+            if (players.Count == 1)
+            {
+                LoserHasBeenFound?.Invoke(this, $"{players[0].Name} Has lost The Game");
+                return true;
+            }
 
-            throw new Exception("Validate is loser are not yet implementet");
+            return false;
         }
     }
 }

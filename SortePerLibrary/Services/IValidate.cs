@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SortePerLibrary.Models;
 
 namespace SortePerLibrary.Services
 {
     public interface IValidate
     {
+        event EventHandler<String> LoserHasBeenFound;
         bool ValidateAmountOfPlayers(int amount);
 
-        public bool ValidateIsLoser(List<IPlayerModel> players);
+        bool ValidateIsLoser(List<IPlayerModel> players);
         bool AreTherePairsInHand(List<IPlayerModel> players);
     }
 }

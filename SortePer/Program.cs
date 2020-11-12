@@ -13,6 +13,8 @@ namespace SortePer
         {
             #region InitGame
 
+            bool GameIsStillRunning = true;
+
             // Ask for how many players that wil participate
             int numbersOfPlayers = AskForNumberOfPlayers();
             // List of names that has entered the game from the console
@@ -26,31 +28,63 @@ namespace SortePer
             // Deals the card uot to all the players
             players = GameFactory.DealCards(players, cardDeck);
 
+            IValidate validate = GameFactory.CreateValidator();
+
             IRemoveCards removeCards = GameFactory.RemoveCards();
             // Creates a new game with players in
             // And is access to game logic
-
-            if (removeCards is RemoveCards rem)
-            {
-                rem.RemoveCardsFromPlayers += (sender, s) => Console.WriteLine(s);
-            }
-
-            IGameManager game = GameFactory.CreateGameLogic(players, GameFactory.CreateValidator(), removeCards);
 
             #endregion
 
 
             #region SubScribeToEvents
 
+            // Event if invoked info of with pair and from who wil be displayed in console
+            removeCards.RemoveCardsFromPlayers += (sender, s) => Console.WriteLine(s);
+            // Event if invoked loser will be displayed to Console
+            validate.LoserHasBeenFound += (sender, s) =>
+            {
+                Console.WriteLine(s);
+                GameIsStillRunning = false;
+                Console.ReadLine();
 
+            };
 
             #endregion
+
+            #region Game
+
+            IGameManager game = GameFactory.CreateGameLogic(players, validate, removeCards);
+
+            // subscribes to event next player to play the game
+            game.CallNexPlayer += (sender, s) => Console.WriteLine($"{s}");
+            // Subscribes to players has no more cards left an has left the game
+            game.PlayerHasNoMoreCardsAndHasLeftTheGame += (sender, s) => Console.WriteLine(s);
+
+            #endregion
+
+            // This is the main game loop
+            Console.WriteLine("\nPress any key to play the game");
+            //Console.ReadLine();
+
+            game.PlayerCallsTheGameFirstTime();
+            do
+            {
+
+
+
+                Console.ReadLine();
+                Console.Clear();
+                game.Play();
+
+                // Use take card method
+
+            } while (GameIsStillRunning);
+
 
             Console.WriteLine("Create By Flemming Lyng");
             Console.ReadLine();
         }
-
-
 
 
         /// <summary>
@@ -91,8 +125,6 @@ namespace SortePer
                     {
                         continuValue = false;
                     }
-
-                    // TODO if list already contains name try again
                 } while (continuValue == true);
             }
 

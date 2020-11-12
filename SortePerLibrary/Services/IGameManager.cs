@@ -5,6 +5,13 @@ namespace SortePerLibrary.Services
 {
     public interface IGameManager
     {
-        //void InitializeGame(List<String> names);
+        public event EventHandler<string> CallNexPlayer;
+
+        public void Play();
+
+        public void PlayerCallsTheGameFirstTime();
+
+        public event EventHandler<String> PlayerHasNoMoreCardsAndHasLeftTheGame;
+
     }
 }

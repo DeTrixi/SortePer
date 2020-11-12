@@ -16,26 +16,6 @@ namespace SortePerLibrary.Factories
         {
         }
 
-
-        /// <summary>
-        /// This method initializes the game ready to play
-        /// </summary>
-        /// <param name="names"></param>
-        /// <param name="players"></param>
-        /// <param name="validate"></param>
-        // public static List<IPlayerModel> InitializeGame(List<String> names)
-        // {
-        //     // Generate the list with users
-        //     List<IPlayerModel> players = CreateUsers(names);
-        //     // Create a deck of cards
-        //     ICardDeck cardDeck = CreateCardDeck();
-        //     // Shuffle tha card in no order
-        //     cardDeck = GameFactory.ShuffleCards(cardDeck);
-        //     // Deals the card uot to all the players
-        //     players = GameFactory.DealCards(players, cardDeck);
-        //     return players;
-        // }
-
         // /// <summary>
         // /// This Method creates a IGameManager Instance
         // /// </summary>

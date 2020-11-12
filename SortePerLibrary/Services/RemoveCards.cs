@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using SortePerLibrary.Models;
 
 namespace SortePerLibrary.Services
@@ -34,16 +35,19 @@ namespace SortePerLibrary.Services
         /// <returns></returns>
         public IPlayerModel RemoveCardFromDeck(IPlayerModel player)
         {
+            CardValue tempCardValue;
+
+
             for (int i = 0; i < player.Cards.Count; i++)
             {
-                var cardValue = player.Cards[i].CardValue;
+                tempCardValue = player.Cards[i].CardValue;
                 for (int j = i + 1; j < player.Cards.Count; j++)
                 {
                     if (player.Cards[i].CardValue == player.Cards[j].CardValue)
                     {
-                        RemoveCardsFromPlayers?.Invoke(this, $"{cardValue} has been removed from {player.Name}");
-                        player.Cards.Remove(player.Cards[i]);
                         player.Cards.Remove(player.Cards[j]);
+                        player.Cards.Remove(player.Cards[i]);
+                        RemoveCardsFromPlayers?.Invoke(this, $"{tempCardValue} is a pair and has been removed from {player.Name}'s card deck\n");
                     }
                 }
             }

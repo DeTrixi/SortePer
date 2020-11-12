@@ -44,7 +44,7 @@
           </e>
         </e>
         <e p="Services" t="Include">
-          <e p="GameManagercs.cs" t="Include" />
+          <e p="GameManager.cs" t="Include" />
           <e p="IGameManager.cs" t="Include" />
           <e p="IRemoveCards.cs" t="Include" />
           <e p="IValidate.cs" t="Include" />
