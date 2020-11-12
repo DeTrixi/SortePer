@@ -21,26 +21,28 @@ namespace SortePerLibrary.Factories
         /// This method initializes the game ready to play
         /// </summary>
         /// <param name="names"></param>
-        public static List<IPlayerModel> InitializeGame(List<String> names)
-        {
-            // Generate the list with users
-            List<IPlayerModel> players = CreateUsers(names);
-            // Create a deck of cards
-            ICardDeck cardDeck = CreateCardDeck();
-            // Shuffle tha card in no order
-            cardDeck = GameFactory.ShuffleCards(cardDeck);
-            // Deals the card uot to all the players
-            players = GameFactory.DealCards(players, cardDeck);
-            return players;
-        }
+        /// <param name="players"></param>
+        /// <param name="validate"></param>
+        // public static List<IPlayerModel> InitializeGame(List<String> names)
+        // {
+        //     // Generate the list with users
+        //     List<IPlayerModel> players = CreateUsers(names);
+        //     // Create a deck of cards
+        //     ICardDeck cardDeck = CreateCardDeck();
+        //     // Shuffle tha card in no order
+        //     cardDeck = GameFactory.ShuffleCards(cardDeck);
+        //     // Deals the card uot to all the players
+        //     players = GameFactory.DealCards(players, cardDeck);
+        //     return players;
+        // }
 
         // /// <summary>
-        // /// This Method creates a IGameLogic Instance
+        // /// This Method creates a IGameManager Instance
         // /// </summary>
-        // /// <returns>Returns a IGameLogic instance </returns>
-        public static IGameLogic CreateGameLogic(List<String> names)
+        // /// <returns>Returns a IGameManager instance </returns>
+        public static IGameManager CreateGameLogic(List<IPlayerModel> players, IValidate validate, IRemoveCards removeCards)
         {
-            return new GameLogic(InitializeGame(names), CreateValidator());
+            return new GameManager(players, validate, removeCards);
         }
 
 
@@ -131,6 +133,15 @@ namespace SortePerLibrary.Factories
             } while (cardDeck.Cards.Count >= 1);
 
             return players;
+        }
+
+        /// <summary>
+        /// Creates an instance of IRemoveCards
+        /// </summary>
+        /// <returns></returns>
+        public static IRemoveCards RemoveCards()
+        {
+            return new RemoveCards();
         }
     }
 }

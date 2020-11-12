@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SortePerLibrary.Services
 {
-    public interface IGameLogic
+    public interface IGameManager
     {
         //void InitializeGame(List<String> names);
     }

@@ -11,44 +11,47 @@ namespace SortePer
     {
         static void Main(string[] args)
         {
+            #region InitGame
+
             // Ask for how many players that wil participate
             int numbersOfPlayers = AskForNumberOfPlayers();
-
-
             // List of names that has entered the game from the console
             List<String> names = AskUsersForThereNames(numbersOfPlayers);
+            // Generate the list with users
+            List<IPlayerModel> players = GameFactory.CreateUsers(names);
+            // Create a deck of cards
+            ICardDeck cardDeck = GameFactory.CreateCardDeck();
+            // Shuffle tha card in no order
+            cardDeck = GameFactory.ShuffleCards(cardDeck);
+            // Deals the card uot to all the players
+            players = GameFactory.DealCards(players, cardDeck);
 
-
+            IRemoveCards removeCards = GameFactory.RemoveCards();
             // Creates a new game with players in
-            IGameLogic game = GameFactory.CreateGameLogic(names);
+            // And is access to game logic
+
+            if (removeCards is RemoveCards rem)
+            {
+                rem.RemoveCardsFromPlayers += (sender, s) => Console.WriteLine(s);
+            }
+
+            IGameManager game = GameFactory.CreateGameLogic(players, GameFactory.CreateValidator(), removeCards);
+
+            #endregion
 
 
-            // TODO Subscribe to events START
+            #region SubScribeToEvents
 
 
 
+            #endregion
 
-            // TODO Subscribe to events END
-
-
-
-
-
+            Console.WriteLine("Create By Flemming Lyng");
             Console.ReadLine();
-            // Getting Started
-
-
-            // This Creates a game and puts a game bord in to it
-
-
-
-
-
-            // END THE GAME
-            // TODO display LOSER name and a picture of PER
-
-            Console.WriteLine("Hello Teacher");
         }
+
+
+
 
         /// <summary>
         /// This method will get the names of all the players
@@ -73,6 +76,10 @@ namespace SortePer
                     {
                         Console.WriteLine("this name is already taken try again");
                         continuValue = true;
+                    }
+                    else if (String.IsNullOrEmpty(name))
+                    {
+                        Console.WriteLine("Name cant be empty Try again");
                     }
                     else
                     {
@@ -114,13 +121,11 @@ namespace SortePer
                 }
                 else
                 {
-                    Console.WriteLine("This is not a number or it is not between 3-8");
+                    Console.WriteLine("This is not a number or it is not between 3-7");
                 }
             } while (continueValue == true);
 
             return amountOfPlayers;
         }
-
-
     }
 }

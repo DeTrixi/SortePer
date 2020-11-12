@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SortePerLibrary.Models
 {
     public interface IPlayerModel
     {
         string Name { get; }
-        List<ICardModel> Cards { get; set; }
+        List<ICardModel> Cards { get; }
     }
 }

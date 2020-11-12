@@ -31,10 +31,8 @@
         <e p="Models" t="Include">
           <e p="CardDEck.cs" t="Include" />
           <e p="CardModel.cs" t="Include" />
-          <e p="GameBoard.cs" t="Include" />
           <e p="ICardDeck.cs" t="Include" />
           <e p="ICardModel.cs" t="Include" />
-          <e p="IGameBoard.cs" t="Include" />
           <e p="IPlayerModel.cs" t="Include" />
           <e p="PlayerModel.cs" t="Include" />
         </e>
@@ -46,8 +44,11 @@
           </e>
         </e>
         <e p="Services" t="Include">
-          <e p="GameLogic.cs" t="Include" />
-          <e p="IGameLogic.cs" t="Include" />
+          <e p="GameManagercs.cs" t="Include" />
+          <e p="IGameManager.cs" t="Include" />
+          <e p="IRemoveCards.cs" t="Include" />
+          <e p="IValidate.cs" t="Include" />
+          <e p="RemoveCards.cs" t="Include" />
           <e p="Validate.cs" t="Include" />
         </e>
         <e p="Sorteper.drawio" t="Include" />
