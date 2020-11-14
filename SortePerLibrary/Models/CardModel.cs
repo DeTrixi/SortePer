@@ -1,7 +1,9 @@
-﻿namespace SortePerLibrary.Models
+﻿using System;
+
+namespace SortePerLibrary.Models
 {
     public class CardModel : ICardModel
     {
-        public CardValue CardValue { get; set; }
+        public Enum CardValue { get; set; }
     }
 }

@@ -37,7 +37,7 @@ namespace SortePerLibrary.Services
                 {
                     for (int j = i + 1; j < player.Cards.Count; j++)
                     {
-                        if (player.Cards[i].CardValue == player.Cards[j].CardValue)
+                        if (Equals(player.Cards[i].CardValue, player.Cards[j].CardValue))
                         {
                             return true;
                         }

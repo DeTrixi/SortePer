@@ -35,15 +35,16 @@ namespace SortePerLibrary.Services
         /// <returns></returns>
         public IPlayerModel RemoveCardFromDeck(IPlayerModel player)
         {
-            CardValue tempCardValue;
+            Enum tempCardValue;
 
 
             for (int i = 0; i < player.Cards.Count; i++)
+
             {
                 tempCardValue = player.Cards[i].CardValue;
                 for (int j = i + 1; j < player.Cards.Count; j++)
                 {
-                    if (player.Cards[i].CardValue == player.Cards[j].CardValue)
+                    if (Equals(player.Cards[i].CardValue, player.Cards[j].CardValue))
                     {
                         player.Cards.Remove(player.Cards[j]);
                         player.Cards.Remove(player.Cards[i]);
